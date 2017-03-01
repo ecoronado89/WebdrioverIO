@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns2:test-suite xmlns:ns2="urn:model.allure.qatools.yandex.ru" start="1488341386789" stop="1488341400360">
+	<name>WebdriverIO - Home page</name>
+	<title>WebdriverIO - Home page</title>
+	<test-cases>
+		<test-case start="1488341386791" stop="1488341396795" status="broken">
+			<name>Verify page title</name>
+			<title>Verify page title</title>
+			<labels>
+			</labels>
+			<parameters>
+				<parameter kind="environment-variable" name="capabilities" value="{&quot;maxInstances&quot;:10,&quot;browserName&quot;:&quot;chrome&quot;}"/>
+				<parameter kind="environment-variable" name="spec files" value="[&quot;C:\\Users\\ecoronado\\browserstack-test\\tests\\homepage.js&quot;]"/>
+			</parameters>
+			<steps>
+				<step start="1488341386798" stop="1488341396795" status="broken">
+					<name>POST /wd/hub/session/5713e375-90f9-4bff-9f6d-efa4aa8d21f8/url</name>
+					<title>POST /wd/hub/session/5713e375-90f9-4bff-9f6d-efa4aa8d21f8/url</title>
+					<attachments>
+						<attachment title="Request" source="675d0044-e7a0-445d-bc17-f559586b42ef-attachment.json" type="application/json" size="37"/>
+					</attachments>
+					<steps>
+					</steps>
+				</step>
+			</steps>
+			<attachments>
+			</attachments>
+			<failure>
+				<message>Timeout of 10000ms exceeded. Try to reduce the run time or increase your timeout for test specs (http://webdriver.io/guide/testrunner/timeouts.html); if returning a Promise, ensure it resolves.</message>
+				<stack-trace>Error: Timeout of 10000ms exceeded. Try to reduce the run time or increase your timeout for test specs (http://webdriver.io/guide/testrunner/timeouts.html); if returning a Promise, ensure it resolves.
+    at Timeout.&lt;anonymous&gt; (C:\Users\ecoronado\browserstack-test\node_modules\mocha\lib\runnable.js:232:19)
+    at ontimeout (timers.js:365:14)
+    at tryOnTimeout (timers.js:237:5)
+    at Timer.listOnTimeout (timers.js:207:5)</stack-trace>
+			</failure>
+		</test-case>
+		<test-case start="1488341396795" stop="1488341398547" status="passed">
+			<name>Verify API link is visible</name>
+			<title>Verify API link is visible</title>
+			<labels>
+			</labels>
+			<parameters>
+				<parameter kind="environment-variable" name="capabilities" value="{&quot;maxInstances&quot;:10,&quot;browserName&quot;:&quot;chrome&quot;}"/>
+				<parameter kind="environment-variable" name="spec files" value="[&quot;C:\\Users\\ecoronado\\browserstack-test\\tests\\homepage.js&quot;]"/>
+			</parameters>
+			<steps>
+				<step start="1488341396798" stop="1488341397352" status="passed">
+					<name>POST /wd/hub/session/5713e375-90f9-4bff-9f6d-efa4aa8d21f8/url</name>
+					<title>POST /wd/hub/session/5713e375-90f9-4bff-9f6d-efa4aa8d21f8/url</title>
+					<attachments>
+						<attachment title="Request" source="3f370ea8-6b2f-441c-8753-46345e08d1d5-attachment.json" type="application/json" size="37"/>
+						<attachment title="Response" source="f4f748a7-0c13-4990-aa5b-00896cce3315-attachment.json" type="application/json" size="196"/>
+					</attachments>
+					<steps>
+					</steps>
+				</step>
+				<step start="1488341397362" stop="1488341398444" status="passed">
+					<name>GET /wd/hub/session/5713e375-90f9-4bff-9f6d-efa4aa8d21f8/title</name>
+					<title>GET /wd/hub/session/5713e375-90f9-4bff-9f6d-efa4aa8d21f8/title</title>
+					<attachments>
+						<attachment title="Response" source="0fb66e4a-9c55-4e90-bfe6-00be0a28da9e-attachment.json" type="application/json" size="196"/>
+					</attachments>
+					<steps>
+					</steps>
+				</step>
+				<step start="1488341398457" stop="1488341398477" status="passed">
+					<name>POST /wd/hub/session/5713e375-90f9-4bff-9f6d-efa4aa8d21f8/elements</name>
+					<title>POST /wd/hub/session/5713e375-90f9-4bff-9f6d-efa4aa8d21f8/elements</title>
+					<attachments>
+						<attachment title="Request" source="933ae7ca-a422-4a28-a02b-4e2c89ee0cbc-attachment.json" type="application/json" size="48"/>
+						<attachment title="Response" source="d2dbc2d3-9f0a-4ebb-bfc7-da1f4f474c3b-attachment.json" type="application/json" size="251"/>
+					</attachments>
+					<steps>
+					</steps>
+				</step>
+			</steps>
+			<attachments>
+				<attachment title="Response" source="bfeec930-c86a-4dc8-9eb0-2a99fb6daa75-attachment.json" type="application/json" size="246"/>
+			</attachments>
+		</test-case>
+		<test-case start="1488341398547" stop="1488341400271" status="passed">
+			<name>Verify section rulethemall</name>
+			<title>Verify section rulethemall</title>
+			<labels>
+			</labels>
+			<parameters>
+				<parameter kind="environment-variable" name="capabilities" value="{&quot;maxInstances&quot;:10,&quot;browserName&quot;:&quot;chrome&quot;}"/>
+				<parameter kind="environment-variable" name="spec files" value="[&quot;C:\\Users\\ecoronado\\browserstack-test\\tests\\homepage.js&quot;]"/>
+			</parameters>
+			<steps>
+				<step start="1488341398549" stop="1488341399676" status="passed">
+					<name>POST /wd/hub/session/5713e375-90f9-4bff-9f6d-efa4aa8d21f8/url</name>
+					<title>POST /wd/hub/session/5713e375-90f9-4bff-9f6d-efa4aa8d21f8/url</title>
+					<attachments>
+						<attachment title="Request" source="442c5a0e-e0bd-4106-8fc2-335635664ff9-attachment.json" type="application/json" size="37"/>
+						<attachment title="Response" source="03cdafd5-1969-49d4-b8f6-4b1dce75bde2-attachment.json" type="application/json" size="195"/>
+					</attachments>
+					<steps>
+					</steps>
+				</step>
+				<step start="1488341399679" stop="1488341399723" status="passed">
+					<name>POST /wd/hub/session/5713e375-90f9-4bff-9f6d-efa4aa8d21f8/elements</name>
+					<title>POST /wd/hub/session/5713e375-90f9-4bff-9f6d-efa4aa8d21f8/elements</title>
+					<attachments>
+						<attachment title="Request" source="cfb08066-3b46-415a-91c9-d5d2542237e6-attachment.json" type="application/json" size="66"/>
+						<attachment title="Response" source="27be9f26-0b39-40e0-9c8a-19936d08ef16-attachment.json" type="application/json" size="246"/>
+					</attachments>
+					<steps>
+					</steps>
+				</step>
+				<step start="1488341399725" stop="1488341399780" status="passed">
+					<name>GET /wd/hub/session/5713e375-90f9-4bff-9f6d-efa4aa8d21f8/element/1/text</name>
+					<title>GET /wd/hub/session/5713e375-90f9-4bff-9f6d-efa4aa8d21f8/element/1/text</title>
+					<attachments>
+						<attachment title="Response" source="7d723628-8ef9-4423-811b-f9f098ed5110-attachment.json" type="application/json" size="220"/>
+					</attachments>
+					<steps>
+					</steps>
+				</step>
+				<step start="1488341399782" stop="1488341400094" status="passed">
+					<name>POST /wd/hub/session/5713e375-90f9-4bff-9f6d-efa4aa8d21f8/elements</name>
+					<title>POST /wd/hub/session/5713e375-90f9-4bff-9f6d-efa4aa8d21f8/elements</title>
+					<attachments>
+						<attachment title="Request" source="ff7bcd45-9423-4e7d-b2d3-b559802fba1d-attachment.json" type="application/json" size="65"/>
+						<attachment title="Response" source="d00cf167-9810-4843-8e67-023778ccd9ce-attachment.json" type="application/json" size="485"/>
+					</attachments>
+					<steps>
+					</steps>
+				</step>
+				<step start="1488341400117" stop="1488341400261" status="passed">
+					<name>GET /wd/hub/session/5713e375-90f9-4bff-9f6d-efa4aa8d21f8/element/2/attribute/href</name>
+					<title>GET /wd/hub/session/5713e375-90f9-4bff-9f6d-efa4aa8d21f8/element/2/attribute/href</title>
+					<attachments>
+						<attachment title="Response" source="756650c9-7e00-40b7-9c75-33ca10695a79-attachment.json" type="application/json" size="238"/>
+					</attachments>
+					<steps>
+						<step start="1488341400128" stop="1488341400246" status="passed">
+							<name>GET /wd/hub/session/5713e375-90f9-4bff-9f6d-efa4aa8d21f8/element/3/attribute/href</name>
+							<title>GET /wd/hub/session/5713e375-90f9-4bff-9f6d-efa4aa8d21f8/element/3/attribute/href</title>
+							<attachments>
+								<attachment title="Response" source="158be6f3-9b1c-44aa-8f82-8d93d5009875-attachment.json" type="application/json" size="239"/>
+							</attachments>
+							<steps>
+								<step start="1488341400133" stop="1488341400228" status="passed">
+									<name>GET /wd/hub/session/5713e375-90f9-4bff-9f6d-efa4aa8d21f8/element/4/attribute/href</name>
+									<title>GET /wd/hub/session/5713e375-90f9-4bff-9f6d-efa4aa8d21f8/element/4/attribute/href</title>
+									<attachments>
+										<attachment title="Response" source="dc357ddd-ffdf-425a-9bf6-0d23b286d5e3-attachment.json" type="application/json" size="237"/>
+									</attachments>
+									<steps>
+										<step start="1488341400134" stop="1488341400214" status="passed">
+											<name>GET /wd/hub/session/5713e375-90f9-4bff-9f6d-efa4aa8d21f8/element/5/attribute/href</name>
+											<title>GET /wd/hub/session/5713e375-90f9-4bff-9f6d-efa4aa8d21f8/element/5/attribute/href</title>
+											<attachments>
+												<attachment title="Response" source="969e5172-1ce8-4e53-8c50-5fe1a6a0b99b-attachment.json" type="application/json" size="260"/>
+											</attachments>
+											<steps>
+												<step start="1488341400136" stop="1488341400192" status="passed">
+													<name>GET /wd/hub/session/5713e375-90f9-4bff-9f6d-efa4aa8d21f8/element/6/attribute/href</name>
+													<title>GET /wd/hub/session/5713e375-90f9-4bff-9f6d-efa4aa8d21f8/element/6/attribute/href</title>
+													<attachments>
+														<attachment title="Response" source="44184a20-c725-4535-a926-adc1cd3015c1-attachment.json" type="application/json" size="239"/>
+													</attachments>
+													<steps>
+														<step start="1488341400137" stop="1488341400181" status="passed">
+															<name>GET /wd/hub/session/5713e375-90f9-4bff-9f6d-efa4aa8d21f8/element/7/attribute/href</name>
+															<title>GET /wd/hub/session/5713e375-90f9-4bff-9f6d-efa4aa8d21f8/element/7/attribute/href</title>
+															<attachments>
+																<attachment title="Response" source="43d93324-1b6f-4beb-8dd2-2654ee6401a1-attachment.json" type="application/json" size="238"/>
+															</attachments>
+															<steps>
+															</steps>
+														</step>
+													</steps>
+												</step>
+											</steps>
+										</step>
+									</steps>
+								</step>
+							</steps>
+						</step>
+					</steps>
+				</step>
+			</steps>
+			<attachments>
+			</attachments>
+		</test-case>
+		<test-case start="1488341400295" stop="1488341400359" status="passed">
+			<name>Verify How does it work link destination</name>
+			<title>Verify How does it work link destination</title>
+			<labels>
+			</labels>
+			<parameters>
+				<parameter kind="environment-variable" name="capabilities" value="{&quot;maxInstances&quot;:10,&quot;browserName&quot;:&quot;chrome&quot;}"/>
+				<parameter kind="environment-variable" name="spec files" value="[&quot;C:\\Users\\ecoronado\\browserstack-test\\tests\\homepage.js&quot;]"/>
+			</parameters>
+			<steps>
+				<step start="1488341400298" stop="1488341400340" status="passed">
+					<name>POST /wd/hub/session/5713e375-90f9-4bff-9f6d-efa4aa8d21f8/elements</name>
+					<title>POST /wd/hub/session/5713e375-90f9-4bff-9f6d-efa4aa8d21f8/elements</title>
+					<attachments>
+						<attachment title="Request" source="187b060b-972f-41d1-b374-8184c44ef2d9-attachment.json" type="application/json" size="132"/>
+						<attachment title="Response" source="53d7016a-c7b9-4d65-92d7-bab3e5ac5e78-attachment.json" type="application/json" size="245"/>
+					</attachments>
+					<steps>
+					</steps>
+				</step>
+				<step start="1488341400340" stop="1488341400357" status="passed">
+					<name>GET /wd/hub/session/5713e375-90f9-4bff-9f6d-efa4aa8d21f8/element/8/attribute/href</name>
+					<title>GET /wd/hub/session/5713e375-90f9-4bff-9f6d-efa4aa8d21f8/element/8/attribute/href</title>
+					<attachments>
+						<attachment title="Response" source="68c536f5-01a5-4bf8-8f7d-55cc172bee99-attachment.json" type="application/json" size="225"/>
+					</attachments>
+					<steps>
+					</steps>
+				</step>
+			</steps>
+			<attachments>
+			</attachments>
+		</test-case>
+	</test-cases>
+</ns2:test-suite>

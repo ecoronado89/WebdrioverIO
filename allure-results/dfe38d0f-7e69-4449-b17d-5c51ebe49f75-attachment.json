@@ -1,0 +1,8 @@
+{
+    "state": "success",
+    "sessionId": "64a9d832-f2e0-45fe-83ba-bae2adb655e0",
+    "hCode": 1375735977,
+    "value": "http://webdriver.io/api/property/getTitle.html",
+    "class": "org.openqa.selenium.remote.Response",
+    "status": 0
+}

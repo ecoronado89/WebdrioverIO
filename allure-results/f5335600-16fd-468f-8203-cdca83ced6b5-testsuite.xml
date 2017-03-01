@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns2:test-suite xmlns:ns2="urn:model.allure.qatools.yandex.ru" start="1488342681321" stop="1488342691329">
+	<name>WebdriverIO - API page</name>
+	<title>WebdriverIO - API page</title>
+	<test-cases>
+		<test-case start="1488342681322" stop="1488342691328" status="broken">
+			<name>Click API link &amp; Verify page title</name>
+			<title>Click API link &amp; Verify page title</title>
+			<labels>
+			</labels>
+			<parameters>
+				<parameter kind="environment-variable" name="capabilities" value="{&quot;maxInstances&quot;:10,&quot;browserName&quot;:&quot;chrome&quot;}"/>
+				<parameter kind="environment-variable" name="spec files" value="[&quot;C:\\Users\\ecoronado\\browserstack-test\\tests\\apipage.js&quot;]"/>
+			</parameters>
+			<steps>
+				<step start="1488342681339" stop="1488342690957" status="passed">
+					<name>POST /wd/hub/session/d3a7645d-a5a9-46fa-83aa-266c71bf0f12/url</name>
+					<title>POST /wd/hub/session/d3a7645d-a5a9-46fa-83aa-266c71bf0f12/url</title>
+					<attachments>
+						<attachment title="Request" source="4eb735c2-9aa5-41b1-be36-b7413f881d41-attachment.json" type="application/json" size="37"/>
+						<attachment title="Response" source="ea8b706c-39ab-463b-93bb-2273e1c2c7b4-attachment.json" type="application/json" size="196"/>
+					</attachments>
+					<steps>
+					</steps>
+				</step>
+				<step start="1488342690968" stop="1488342691035" status="passed">
+					<name>POST /wd/hub/session/d3a7645d-a5a9-46fa-83aa-266c71bf0f12/element</name>
+					<title>POST /wd/hub/session/d3a7645d-a5a9-46fa-83aa-266c71bf0f12/element</title>
+					<attachments>
+						<attachment title="Request" source="d42222da-2a18-41ad-b6ea-598490f192c9-attachment.json" type="application/json" size="48"/>
+						<attachment title="Response" source="8e72bd46-83a8-420d-afd2-2c2732d1ae9e-attachment.json" type="application/json" size="222"/>
+					</attachments>
+					<steps>
+					</steps>
+				</step>
+				<step start="1488342691047" stop="1488342691328" status="broken">
+					<name>POST /wd/hub/session/d3a7645d-a5a9-46fa-83aa-266c71bf0f12/element/0/click</name>
+					<title>POST /wd/hub/session/d3a7645d-a5a9-46fa-83aa-266c71bf0f12/element/0/click</title>
+					<attachments>
+					</attachments>
+					<steps>
+					</steps>
+				</step>
+			</steps>
+			<attachments>
+			</attachments>
+			<failure>
+				<message>Timeout of 10000ms exceeded. Try to reduce the run time or increase your timeout for test specs (http://webdriver.io/guide/testrunner/timeouts.html); if returning a Promise, ensure it resolves.</message>
+				<stack-trace>Error: Timeout of 10000ms exceeded. Try to reduce the run time or increase your timeout for test specs (http://webdriver.io/guide/testrunner/timeouts.html); if returning a Promise, ensure it resolves.
+    at Timeout.&lt;anonymous&gt; (C:\Users\ecoronado\browserstack-test\node_modules\mocha\lib\runnable.js:232:19)
+    at ontimeout (timers.js:365:14)
+    at tryOnTimeout (timers.js:237:5)
+    at Timer.listOnTimeout (timers.js:207:5)</stack-trace>
+			</failure>
+		</test-case>
+	</test-cases>
+</ns2:test-suite>

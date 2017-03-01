@@ -13,7 +13,7 @@ describe('WebdriverIO - API page',function(){
         expect(results.length).to.be.equal(3);
 
         results[1].click();
-        expect($('.doc h1').getText()).to.be.equal('GETTEXT');
+        expect($('.doc h1').getText()).to.be.equal('GETs');
 	})
 	it('Random select & Title validation',function(){
 		browser.url('/api.html');

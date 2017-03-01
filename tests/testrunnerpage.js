@@ -13,4 +13,11 @@ describe('WebdriverIO - Testrunner page',function(){
 			}
 		}
 	})
+	it('Verify non-available image',function(){
+		browser.url('/guide/testrunner/jenkins.html');
+
+		request('http://webdriver.io/images/jenkins-non-available.png', function (error, response, body) {
+  			expect(response.statusCode).to.be.equal(200);
+		})
+	})
 })

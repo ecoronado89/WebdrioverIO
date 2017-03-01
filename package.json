@@ -4,9 +4,10 @@
   "description": "Browserstack - sample",
   "main": "index.js",
   "scripts": {
-    "test": "npm run remote && npm run local",
+    "test": "npm run remote && npm run local && npm run parallel",
     "local": "./node_modules/.bin/wdio conf/local.conf.js",
-    "remote": "./node_modules/.bin/wdio conf/remote.conf.js"
+    "remote": "./node_modules/.bin/wdio conf/remote.conf.js",
+    "parallel": "./node_modules/.bin/wdio conf/remote_parallel.conf.js"
   },
   "author": "",
   "license": "ISC",

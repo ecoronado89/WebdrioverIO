@@ -1,8 +1,0 @@
-{
-    "state": "success",
-    "sessionId": "2a84e081-f4d2-4cfb-9570-04ca56e76d2e",
-    "hCode": 1422688123,
-    "value": "WebdriverIO - Selenium 2.0 javascript bindings for nodejs",
-    "class": "org.openqa.selenium.remote.Response",
-    "status": 0
-}

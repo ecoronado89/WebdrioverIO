@@ -62,7 +62,6 @@ exports.config = {
         browserName: 'Chrome',
         browser_version: '55.0',
         resolution: '1024x768',
-        name: 'single_test',
         build: 'webdriver-browserstack'
     }],
     //
@@ -97,7 +96,7 @@ exports.config = {
     baseUrl: 'http://webdriver.io',
     //
     // Default timeout for all waitFor* commands.
-    waitforTimeout: 10000,
+    waitforTimeout: 40000,
     //
     // Default timeout in milliseconds for request
     // if Selenium Grid doesn't send response
@@ -125,6 +124,7 @@ exports.config = {
   
     framework: 'mocha',
     mochaOpts: {
-      ui: 'bdd'
+      ui: 'bdd',
+      timeout: 99999999
     }
     }

@@ -1,8 +1,0 @@
-{
-    "state": "success",
-    "sessionId": "64a9d832-f2e0-45fe-83ba-bae2adb655e0",
-    "hCode": 1720955191,
-    "value": "http://webdriver.io/api/protocol/back.html",
-    "class": "org.openqa.selenium.remote.Response",
-    "status": 0
-}

@@ -1,8 +1,0 @@
-{
-    "state": "success",
-    "sessionId": "64a9d832-f2e0-45fe-83ba-bae2adb655e0",
-    "hCode": 377655432,
-    "value": "http://webdriver.io/api/mobile/performTouchAction.html",
-    "class": "org.openqa.selenium.remote.Response",
-    "status": 0
-}

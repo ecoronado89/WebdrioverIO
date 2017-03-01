@@ -1,8 +1,0 @@
-{
-    "state": "success",
-    "sessionId": "22e32afe-13b6-49fa-be6c-dc31fee6322a",
-    "hCode": 1915411640,
-    "value": "https://github.com/webdriverio/grunt-webdriver",
-    "class": "org.openqa.selenium.remote.Response",
-    "status": 0
-}

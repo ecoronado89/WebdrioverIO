@@ -12,18 +12,18 @@ var json = JSON.parse(fs.readFileSync(file, 'utf8'));
 
 function iterate(pageUrl){
 
-	
-
-describe('TC1-' +pageUrl+ ': webdriver.io page',function(){
-	
-		
+describe('Page - ' +pageUrl+ ': ecwebd02.llbean.com',function(){
 
 		console.log(pageUrl);
 		
-			it('STP-01: validar titulo del homepage',function(){
+			it('Validate Size Chart',function(){
 				browser.url(pageUrl);
-				var title = browser.getTitle();
-				assert.equal(title,'WebdriverIO - Selenium 2.0 javascript bindings for nodejs');
+				var pdpJsonVar = browser.execute('return pdpJson.displaySizeChart');
+				if(pdpJsonVar){
+					var hasSizeChart = browser.isExisting('=View Size Chart')
+					assert(hasSizeChart);
+				}
+				
 			});
 
 
@@ -32,7 +32,7 @@ describe('TC1-' +pageUrl+ ': webdriver.io page',function(){
 }
 
 for(var i= 0; i < total; i++){
-iterate('/llb/shop/' + json[i].WEB_PAGE_ID);
+iterate('https://ecwebd02.llbean.com/llb/shop/'+json[i].WEB_PAGE_ID);
 }
 
 // describe('WebdriverIO - Home page',function(){

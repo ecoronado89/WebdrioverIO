@@ -10,7 +10,7 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-        './tests/**/*.js'
+        './tests/homepage.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -72,7 +72,7 @@ exports.config = {
     //
     // Set a base URL in order to shorten url command calls. If your url parameter starts
     // with "/", then the base url gets prepended.
-    baseUrl: 'http://webdriver.io',
+    baseUrl: 'http://www.llbean.com',
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 20000,
@@ -125,7 +125,8 @@ exports.config = {
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
     mochaOpts: {
-        ui: 'bdd'
+        ui: 'bdd',
+      timeout: 99999999
     },
     //
     // =====

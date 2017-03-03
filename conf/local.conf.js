@@ -10,7 +10,7 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-        './tests/homepage.js'
+        './tests/testrunnerpage.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -72,7 +72,8 @@ exports.config = {
     //
     // Set a base URL in order to shorten url command calls. If your url parameter starts
     // with "/", then the base url gets prepended.
-    baseUrl: 'https://ecwebd02.llbean.com/llb/shop/',
+    //baseUrl: 'https://ecwebd02.llbean.com/llb/shop/',
+    baseUrl: 'http://webdriver.io',
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 20000,

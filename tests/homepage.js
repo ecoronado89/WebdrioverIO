@@ -8,31 +8,59 @@ var file = path.join(__dirname, '../data/jsondata.json');
 var json = JSON.parse(fs.readFileSync(file, 'utf8'));
 
 	var total = json.length;
+	
 
 
 function iterate(pageUrl){
 
-describe('Page - ' +pageUrl+ ': ecwebd02.llbean.com',function(){
+var runTest = true, setRun = true;
+
+	describe('Page - ' +pageUrl+ ': ecwebd02.llbean.com',function(){
 
 		console.log(pageUrl);
 		
-			it('Validate Size Chart',function(){
-				browser.url(pageUrl);
-				var pdpJsonVar = browser.execute('return pdpJson.displaySizeChart');
-				if(pdpJsonVar){
-					var hasSizeChart = browser.isExisting('=View Size Chart')
-					assert(hasSizeChart);
-				}
-				
-			});
+		 before(function(){
+		 browser.url(pageUrl);
+		 })
 
+		 //before(function())
 
+		it('Verify page is available',function(){
+			var title = browser.getTitle();
+			console.log(title);
+			expect(title).to.not.equal('L.L.Bean: Page Not Available');
+		});
+		it('Verify item is available',function(){
+			var unavailable = browser.isExisting('div.alert-warning');
+			console.log(unavailable)
+			expect(unavailable).to.be.equal(false);
+		});	
+		//console.log(setRun);
+		//console.log(runTest);
+		// if(runTest){
+		// 	it('Validate Size Chart',function(){
+		// 		browser.url(pageUrl);
+		// 		var pdpJsonVar = browser.execute('return pdpJson.displaySizeChart');
+		// 		console.log(pdpJsonVar);
+		// 		if(pdpJsonVar){
+		// 			var hasSizeChart = browser.isExisting('=View Size Chart')
+		// 			assert(hasSizeChart);
+		// 		}
+		
+		// 	});
+		// 	it.only('validate Swatches',function(){
+		// 		browser.url(pageUrl);
+		// 		var imgUrl = browser.getCssProperty('span.swatch-bg-0', 'background-image');
+		// 		imgUrl.replace('defaultImage','Hola')
+		// 		console.log(imgUrl.value);
+		// 	});
+		// }
+		
 	});
-
 }
 
 for(var i= 0; i < total; i++){
-iterate('https://ecwebd02.llbean.com/llb/shop/'+json[i].WEB_PAGE_ID);
+iterate('https://ecwebs01.llbean.com/llb/shop/'+json[i].WEB_PAGE_ID);
 }
 
 // describe('WebdriverIO - Home page',function(){

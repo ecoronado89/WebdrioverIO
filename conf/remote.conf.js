@@ -1,5 +1,6 @@
+var browserstack = require('browserstack-local');
 exports.config = {
-    
+
     //
     // =================
     // Service Providers
@@ -25,7 +26,7 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-        './tests/homepage.js'
+        './tests/CTTCM_296.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -58,16 +59,47 @@ exports.config = {
     build: 'webdriver-browserstack'
   },
     capabilities: [{
-        // maxInstances can get overwritten per capability. So if you have an in-house Selenium
-        // grid with only 5 firefox instances available you can make sure that not more than
-        // 5 instances get started at a time.
-        os: 'Windows',
-        os_version: '7',
-        browserName: 'Chrome',
-        browser_version: '55.0',
-        resolution: '1024x768',
-        build: 'webdriver-browserstack'
-    }],
+      'os': 'Windows',
+ 'os_version': '7',
+ 'browser': 'Chrome',
+ 'browser_version': '56.0',
+ 'resolution': '1024x768',
+ 'acceptSslCerts': true,
+      'browserstack.local': true
+    }//,{
+//       os: 'Windows',
+//       os_version: '7',
+//       browserName: 'Chrome',
+//       browser_version: '55.0',
+//       resolution: '1024x768',
+//       'browserstack.local': true
+//     },{
+//       'os': 'OS X',
+//       'os_version': 'El Capitan',
+//       'browser': 'Safari',
+//       'browser_version': '9.1',
+//       'resolution': '1024x768',
+//       'browserstack.local': true
+// }
+],
+// Code to start browserstack local before start of test
+  onPrepare: function (config, capabilities) {
+    console.log("Connecting local");
+    return new Promise(function(resolve, reject){
+      exports.bs_local = new browserstack.Local();
+      exports.bs_local.start({'key': exports.config.key }, function(error) {
+        if (error) return reject(error);
+        console.log('Connected. Now testing...');
+
+        resolve();
+      });
+    });
+  },
+
+  // Code to stop browserstack local after end of test
+  onComplete: function (capabilties, specs) {
+    exports.bs_local.stop(function() {});
+  },
     //
     // ===================
     // Test Configurations
@@ -93,11 +125,12 @@ exports.config = {
     //
     // Saves a screenshot to a given path if a command fails.
 
-     screenshotPath: './errorShots/',
+     screenshotPath: null,
      //
     // Set a base URL in order to shorten url command calls. If your url parameter starts
     // with "/", then the base url gets prepended.
-    baseUrl: 'https://ecwebd02.llbean.com/llb/shop/',
+    baseUrl: 'https://ecwebq11.llbean.com',
+    browser.setCookie({name:'Q-Token',value:'WRhJpF4bzwdy2d8Q'}),
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 40000,
@@ -110,9 +143,11 @@ exports.config = {
     // Default request retries count
 
     connectionRetryCount: 3,
+
+    services: ['browserstack'],
     // Make sure you have the wdio adapter package for the specific framework installed
     // before running any tests.
-    // Test reporter for stdout.    
+    // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: http://webdriver.io/guide/testrunner/reporters.html
     reporters: ['spec','allure'],
@@ -125,7 +160,7 @@ exports.config = {
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
 
-  
+
     framework: 'mocha',
     mochaOpts: {
       ui: 'bdd',

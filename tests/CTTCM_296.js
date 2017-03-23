@@ -2,13 +2,17 @@ var assert = require('assert');
 var expect = require('chai').expect;
 var homePage = require('../pages/homePage');
 var productPage = require('../pages/productPage');
+var monogrammingPage = require('../pages/monogrammingPage');
+var forceModal = require('../pages/closeForce');
 var monogrammLink = 'a.mono-detail-link';
 var monogramHelperText = 'div.service-helper-text';
 
 describe('CTTCM-296',function(){
 
   before(function(){
-  browser.url('/');
+    browser.url('/');
+    //forceModal.closeForce();
+  browser.url('/?mmcore.gm=2');
 
  });
 
@@ -48,6 +52,7 @@ describe('CTTCM-296',function(){
  });
 
  it('Step #5 - Save Monogramm',function(){
-
+   monogrammingPage.selectMonogramType();
+   browser.pause(10000);
  });
 })

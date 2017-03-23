@@ -39,5 +39,6 @@ describe('Services: Monogramming, No OAP user',function(){
 
  it('Step #4 - Select Item set',function(){
    productPage.selectRandomItemSet();
+   productPage.selectRandomSize();
  })
 })

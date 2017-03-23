@@ -4,7 +4,7 @@ exports.config = {
 
   updateJob: false,
   specs: [
-    './tests/**/*.js'
+    './tests/homepage.js'
   ],
   exclude: [],
 
@@ -22,29 +22,65 @@ exports.config = {
    resolution: '1024x768',
    build: 'webdriver-browserstack'
 },{
-   os: 'Windows',
+    os: 'Windows',
    os_version: '7',
-   browser: 'Firefox',
-   browser_version: '51.0',
-   resolution: '1366x768'
-},{
-   os: 'Windows',
-   os_version: '8',
-   browser: 'IE',
-   browser_version: '8.0',
+   browserName: 'Chrome',
+   browser_version: '55.0',
    resolution: '1024x768'
 },{
-   os: 'OS X',
-   os_version: 'Mountain Lion',
-   browser: 'Safari',
-   browser_version: '6.2',
+    os: 'Windows',
+   os_version: '7',
+   browserName: 'Chrome',
+   browser_version: '55.0',
+   resolution: '1024x768'
+},{
+    os: 'Windows',
+   os_version: '7',
+   browserName: 'Chrome',
+   browser_version: '55.0',
+   resolution: '1024x768'
+},{
+  os: 'Windows',
+   os_version: '7',
+   browserName: 'Chrome',
+   browser_version: '55.0',
+   resolution: '1024x768'
+},{
+  os: 'Windows',
+   os_version: '7',
+   browserName: 'Chrome',
+   browser_version: '55.0',
+   resolution: '1024x768'
+},{
+  os: 'Windows',
+   os_version: '7',
+   browserName: 'Chrome',
+   browser_version: '55.0',
+   resolution: '1024x768'
+},{
+  os: 'Windows',
+   os_version: '7',
+   browserName: 'Chrome',
+   browser_version: '55.0',
+   resolution: '1024x768'
+},{
+  os: 'Windows',
+   os_version: '7',
+   browserName: 'Chrome',
+   browser_version: '55.0',
+   resolution: '1024x768'
+},{
+  os: 'Windows',
+   os_version: '7',
+   browserName: 'Chrome',
+   browser_version: '55.0',
    resolution: '1024x768'
 }],
 
   logLevel: 'verbose',
   coloredLogs: true,
   screenshotPath: './errorShots/',
-  baseUrl: 'http://webdriver.io',
+  baseUrl: 'https://ecwebd02.llbean.com/llb/shop/',
   waitforTimeout: 10000,
   connectionRetryTimeout: 90000,
   connectionRetryCount: 3,

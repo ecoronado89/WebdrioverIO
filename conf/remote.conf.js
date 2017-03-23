@@ -25,7 +25,7 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-        './tests/**/*.js'
+        './tests/homepage.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -53,6 +53,10 @@ exports.config = {
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://docs.saucelabs.com/reference/platforms-configurator
     //
+    commonCapabilities: {
+    name: 'remote_test',
+    build: 'webdriver-browserstack'
+  },
     capabilities: [{
         // maxInstances can get overwritten per capability. So if you have an in-house Selenium
         // grid with only 5 firefox instances available you can make sure that not more than
@@ -93,7 +97,7 @@ exports.config = {
      //
     // Set a base URL in order to shorten url command calls. If your url parameter starts
     // with "/", then the base url gets prepended.
-    baseUrl: 'http://webdriver.io',
+    baseUrl: 'https://ecwebd02.llbean.com/llb/shop/',
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 40000,

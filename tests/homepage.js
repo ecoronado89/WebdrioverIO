@@ -1,4 +1,5 @@
 var assert = require('assert');
+var parallel = require('mocha.parallel');
 var expect = require('chai').expect;
 var request = require('request');
 var path = require('path');
@@ -8,63 +9,61 @@ var file = path.join(__dirname, '../data/jsondata.json');
 var json = JSON.parse(fs.readFileSync(file, 'utf8'));
 
 	var total = json.length;
-	
+
 
 
 function iterate(pageUrl){
 
 var runTest = true, setRun = true;
+var firstIndex = "url(\"";
+var defaultImageString = "&defaultimage=llbean/ptiff/missing_swatch.tif\")";
 
-	describe('Page - ' +pageUrl+ ': ecwebd02.llbean.com',function(){
+	parallel('Page - ' +pageUrl,function(){
 
 		console.log(pageUrl);
-		
+
 		 before(function(){
 		 browser.url(pageUrl);
-		 })
-
-		 //before(function())
+	 	});
 
 		it('Verify page is available',function(){
 			var title = browser.getTitle();
 			console.log(title);
 			expect(title).to.not.equal('L.L.Bean: Page Not Available');
 		});
+
 		it('Verify item is available',function(){
 			var unavailable = browser.isExisting('div.alert-warning');
 			console.log(unavailable)
 			expect(unavailable).to.be.equal(false);
-		});	
-		//console.log(setRun);
-		//console.log(runTest);
-		// if(runTest){
-		// 	it('Validate Size Chart',function(){
-		// 		browser.url(pageUrl);
-		// 		var pdpJsonVar = browser.execute('return pdpJson.displaySizeChart');
-		// 		console.log(pdpJsonVar);
-		// 		if(pdpJsonVar){
-		// 			var hasSizeChart = browser.isExisting('=View Size Chart')
-		// 			assert(hasSizeChart);
-		// 		}
-		
-		// 	});
-		// 	it.only('validate Swatches',function(){
-		// 		browser.url(pageUrl);
-		// 		var imgUrl = browser.getCssProperty('span.swatch-bg-0', 'background-image');
-		// 		imgUrl.replace('defaultImage','Hola')
-		// 		console.log(imgUrl.value);
-		// 	});
-		// }
-		
+		});
+
+		it('Validate Size Chart',function(){
+			var pdpJsonVar = browser.execute('return pdpJson.displaySizeChart');
+			console.log(pdpJsonVar);
+			if(pdpJsonVar){
+				var hasSizeChart = browser.isExisting('=View Size Chart')
+				assert(hasSizeChart);
+			}
+		});
+
+		it('validate Swatches',function(){
+			var imgUrl = browser.getCssProperty('label.item-color:nth-child(2) span', 'background-image');
+			var test = imgUrl[0].value.replace(firstIndex,'').replace(defaultImageString,'');
+			request(test, function (error, response, body) {
+		 			expect(response.statusCode).to.be.equal(200);
+			})
+		});
+
 	});
 }
 
 for(var i= 0; i < total; i++){
-iterate('https://ecwebs01.llbean.com/llb/shop/'+json[i].WEB_PAGE_ID);
+iterate('https://ecwebq12.llbean.com/llb/shop/'+json[i].WEB_PAGE_ID);
 }
 
 // describe('WebdriverIO - Home page',function(){
-	
+
 // 	it('Verify page title',function(){
 // 		browser.url('/llb/shop/' + pageId);
 // 		var title = browser.getTitle();

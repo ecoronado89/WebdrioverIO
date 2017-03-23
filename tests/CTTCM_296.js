@@ -1,4 +1,5 @@
 var assert = require('assert');
+var expect = require('chai').expect;
 var homePage = require('../pages/homePage');
 var productPage = require('../pages/productPage');
 var monogrammLink = 'a.mono-detail-link';
@@ -40,5 +41,9 @@ describe('Services: Monogramming, No OAP user',function(){
  it('Step #4 - Select Item set',function(){
    productPage.selectRandomItemSet();
    productPage.selectRandomSize();
+   productPage.selectRandomColor();
+   productPage.clickAddToBag();
+   var pageTitle = browser.getTitle();
+   expect(pageTitle).to.be.equal('L.L.Bean: Monogramming');
  })
 })

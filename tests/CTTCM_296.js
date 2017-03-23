@@ -5,7 +5,7 @@ var productPage = require('../pages/productPage');
 var monogrammLink = 'a.mono-detail-link';
 var monogramHelperText = 'div.service-helper-text';
 
-describe('Services: Monogramming, No OAP user',function(){
+describe('CTTCM-296',function(){
 
   before(function(){
   browser.url('/');
@@ -45,5 +45,9 @@ describe('Services: Monogramming, No OAP user',function(){
    productPage.clickAddToBag();
    var pageTitle = browser.getTitle();
    expect(pageTitle).to.be.equal('L.L.Bean: Monogramming');
- })
+ });
+
+ it('Step #5 - Save Monogramm',function(){
+
+ });
 })

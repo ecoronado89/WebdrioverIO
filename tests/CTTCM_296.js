@@ -11,7 +11,7 @@ describe('CTTCM-296',function(){
 
   before(function(){
     browser.url('/');
-    //forceModal.closeForce();
+    forceModal.closeForce();
   browser.url('/?mmcore.gm=2');
 
  });
@@ -53,6 +53,7 @@ describe('CTTCM-296',function(){
 
  it('Step #5 - Save Monogramm',function(){
    monogrammingPage.selectMonogramType();
-   browser.pause(10000);
+   //productPage.getPASBTitle();
+   //browser.pause(10000);
  });
 })

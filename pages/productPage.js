@@ -3,6 +3,7 @@ var monogrammingPopUp = '.mono-pop-over-inner';
 var itemSetList = 'div.item-set label';
 var sizeGroupList = 'div.form-group fieldset label';
 var colorGrouptList = 'div.item-color-group label';
+var pasbTitle = 'div.ui-dialog-titlebar span';
 
 function clickDetailsLink(){
   browser.click(monogrammingDetailsLInk);
@@ -39,6 +40,12 @@ function clickAddToBag(){
  browser.click('div.form-inline button');
 };
 
+function getPASBTitle(){
+  browser.waitForVisible(pasbTitle,10000);
+  var x = browser.getValue(pasbTitle);
+  console.log(x);
+};
+
 module.exports = {
   clickDetailsLink : clickDetailsLink,
   closeDetalisPopUp : closeDetalisPopUp,
@@ -47,5 +54,6 @@ module.exports = {
   selectRandomSize : selectRandomSize,
   selectRandomSize : selectRandomSize,
   selectRandomColor : selectRandomColor,
-  clickAddToBag : clickAddToBag
+  clickAddToBag : clickAddToBag,
+  getPASBTitle : getPASBTitle
 };

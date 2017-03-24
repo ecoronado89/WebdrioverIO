@@ -1,4 +1,5 @@
 var browserstack = require('browserstack-local');
+var path = 'C:\Users\ecoronado\IdeaProjects\APP_Ecomm_CTQAAutomation\extra-files\resources\BrowserStackLocal.exe';
 exports.config = {
 
     //
@@ -66,28 +67,28 @@ exports.config = {
  'resolution': '1024x768',
  'acceptSslCerts': true,
       'browserstack.local': true
-    }//,{
-//       os: 'Windows',
-//       os_version: '7',
-//       browserName: 'Chrome',
-//       browser_version: '55.0',
-//       resolution: '1024x768',
-//       'browserstack.local': true
-//     },{
-//       'os': 'OS X',
-//       'os_version': 'El Capitan',
-//       'browser': 'Safari',
-//       'browser_version': '9.1',
-//       'resolution': '1024x768',
-//       'browserstack.local': true
-// }
+    },{
+  'os': 'Windows',
+  'os_version': '7',
+  'browser': 'Firefox',
+  'browser_version': '52.0',
+  'resolution': '1024x768',
+  'browserstack.local': true
+    },{
+       'os': 'OS X',
+       'os_version': 'El Capitan',
+       'browser': 'Safari',
+       'browser_version': '9.1',
+       'resolution': '1024x768',
+       'browserstack.local': true
+ }
 ],
 // Code to start browserstack local before start of test
   onPrepare: function (config, capabilities) {
     console.log("Connecting local");
     return new Promise(function(resolve, reject){
       exports.bs_local = new browserstack.Local();
-      exports.bs_local.start({'key': exports.config.key }, function(error) {
+      exports.bs_local.start({'key': exports.config.key, 'binarypath': 'C:/Users/ecoronado/browserstack-test/browserstack/BrowserStackLocal.exe', 'forcelocal':true, 'force':true }, function(error) {
         if (error) return reject(error);
         console.log('Connected. Now testing...');
 
@@ -130,7 +131,6 @@ exports.config = {
     // Set a base URL in order to shorten url command calls. If your url parameter starts
     // with "/", then the base url gets prepended.
     baseUrl: 'https://ecwebq11.llbean.com',
-    browser.setCookie({name:'Q-Token',value:'WRhJpF4bzwdy2d8Q'}),
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 40000,

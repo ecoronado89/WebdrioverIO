@@ -3,7 +3,9 @@ var monogrammingPopUp = '.mono-pop-over-inner';
 var itemSetList = 'div.item-set label';
 var sizeGroupList = 'div.form-group fieldset label';
 var colorGrouptList = 'div.item-color-group label';
-var pasbTitle = 'div.ui-dialog-titlebar span';
+var PASBProductNameLocator = 'div.ui-dialog div.SB_PopInItemContainer li.SB_PopInItemName a';
+var estimatedShippingAndHandling = 'div[class*="ui-dialog"] li> span.SB_PopInDataFinancialData>strong';
+var estimatedSubtotal = 'div[class*="ui-dialog"] li.SB_PopInDataFinancialTotal span:nth-child(2)';
 
 function clickDetailsLink(){
   browser.click(monogrammingDetailsLInk);
@@ -40,10 +42,9 @@ function clickAddToBag(){
  browser.click('div.form-inline button');
 };
 
-function getPASBTitle(){
-  browser.waitForVisible(pasbTitle,10000);
-  var x = browser.getValue(pasbTitle);
-  console.log(x);
+function isPASBModalVisible(){
+ var pasbProdName = browser.isVisible(PASBProductNameLocator);
+ return pasbProdName;
 };
 
 module.exports = {
@@ -55,5 +56,5 @@ module.exports = {
   selectRandomSize : selectRandomSize,
   selectRandomColor : selectRandomColor,
   clickAddToBag : clickAddToBag,
-  getPASBTitle : getPASBTitle
+  isPASBModalVisible : isPASBModalVisible
 };

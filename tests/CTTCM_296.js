@@ -53,7 +53,7 @@ describe('CTTCM-296',function(){
 
  it('Step #5 - Save Monogramm',function(){
    monogrammingPage.selectMonogramType();
-   //productPage.getPASBTitle();
-   //browser.pause(10000);
+   assert(productPage.isPASBModalVisible());
+   browser.pause(3000);
  });
 })

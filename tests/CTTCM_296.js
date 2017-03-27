@@ -2,13 +2,17 @@ var assert = require('assert');
 var expect = require('chai').expect;
 var homePage = require('../pages/homePage');
 var productPage = require('../pages/productPage');
+var monogrammingPage = require('../pages/monogrammingPage');
+var forceModal = require('../pages/closeForce');
 var monogrammLink = 'a.mono-detail-link';
 var monogramHelperText = 'div.service-helper-text';
 
-describe('Services: Monogramming, No OAP user',function(){
+describe('CTTCM-296',function(){
 
   before(function(){
-  browser.url('/');
+    browser.url('/');
+    forceModal.closeForce();
+  browser.url('/?mmcore.gm=2');
 
  });
 
@@ -43,7 +47,13 @@ describe('Services: Monogramming, No OAP user',function(){
    productPage.selectRandomSize();
    productPage.selectRandomColor();
    productPage.clickAddToBag();
-   var pageTitle = browser.getTitle();
+  // var pageTitle = browser.getTitle();
    expect(pageTitle).to.be.equal('L.L.Bean: Monogramming');
- })
+ });
+
+ it('Step #5 - Save Monogramm',function(){
+   monogrammingPage.selectMonogramType();
+   assert(productPage.isPASBModalVisible());
+   //browser.pause(3000);
+ });
 })

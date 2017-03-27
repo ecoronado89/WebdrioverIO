@@ -47,7 +47,7 @@ describe('CTTCM-296',function(){
    productPage.selectRandomSize();
    productPage.selectRandomColor();
    productPage.clickAddToBag();
-  // var pageTitle = browser.getTitle();
+   var pageTitle = browser.getTitle();
    expect(pageTitle).to.be.equal('L.L.Bean: Monogramming');
  });
 

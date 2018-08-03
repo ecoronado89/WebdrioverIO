@@ -10,7 +10,7 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-        './tests/CTTCM_296.js'
+        './tests/apipage.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -73,7 +73,7 @@ exports.config = {
     // Set a base URL in order to shorten url command calls. If your url parameter starts
     // with "/", then the base url gets prepended.
     //baseUrl: 'https://ecwebd02.llbean.com/llb/shop/',
-    baseUrl: 'https://ecwebq11.llbean.com',
+    baseUrl: 'http://webdriver.io/',
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 20000,
@@ -120,14 +120,26 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: http://webdriver.io/guide/testrunner/reporters.html
-    reporters: ['spec','allure'],
+    reporters: ['spec'],
 
     //
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
     mochaOpts: {
         ui: 'bdd',
-      timeout: 99999999
+        colors: true,
+        reporter: 'mocha-reportportal-agent',
+        reporterOptions: {
+            // client settings
+            token: "00000000-0000-0000-0000-000000000000",
+            endpoint: "http://localhost:8080/api/v1",
+            launch: "WebdriverIO",
+            project: "RP POC",
+            // agent settings
+            attachScreenshots: true,
+            showPassedHooks: false
+        },
+        timeout: 99999999
     },
     //
     // =====

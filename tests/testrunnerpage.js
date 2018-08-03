@@ -4,7 +4,7 @@ var Browser = require('zombie');
 var browser = new Browser();
 
 describe('WebdriverIO - Testrunner page',function(){
-	it('Verify image has loaded',function(){
+	it.only('Verify image has loaded',function(){
 		browser.visit('/guide/testrunner/jenkins.html');
 
 		var divContainer = browser.getAttribute('article.guide p img', 'src');

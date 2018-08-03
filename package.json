@@ -2,9 +2,9 @@
   "name": "browserstack-test",
   "version": "1.0.0",
   "description": "Browserstack - sample",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
-    "test": "npm run remote && npm run local && npm run parallel",
+    "test": "node ./main.js",
     "local": "cross-env NODE_TLS_REJECT_UNAUTHORIZED=0 ./node_modules/.bin/wdio conf/local.conf.js",
     "remote": "./node_modules/.bin/wdio conf/remote.conf.js",
     "parallel": "./node_modules/.bin/wdio conf/remote_parallel.conf.js"
@@ -21,6 +21,7 @@
     "chai": "^3.5.0",
     "csv-to-json": "^0.1.2",
     "mocha": "^3.2.0",
+    "mocha-reportportal-agent": "^0.2.1",
     "mocha.parallel": "^0.15.0",
     "replace-string": "^1.1.0",
     "request": "^2.79.0",
@@ -28,11 +29,12 @@
     "wdio-allure-reporter": "^0.1.2",
     "wdio-browserstack-service": "^0.1.4",
     "wdio-mocha-framework": "^0.5.8",
-    "wdio-selenium-standalone-service": "0.0.8",
+    "wdio-selenium-standalone-service": "^0.0.10",
     "wdio-spec-reporter": "0.0.5"
   },
   "dependencies": {
     "cross-env": "^5.1.3",
+    "mocha-rp-reporter": "^1.0.12",
     "webdriverio": "^4.10.2"
   }
 }

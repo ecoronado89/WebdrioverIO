@@ -139,8 +139,9 @@ exports.config = {
     // resolved to continue.
     //
     // Gets executed once before all workers get launched.
-    // onPrepare: function (config, capabilities) {
-    // },
+    onPrepare() {
+        process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
+    },
     //
     // Gets executed just before initialising the webdriver session and test framework. It allows you
     // to manipulate configurations depending on the capability or spec.

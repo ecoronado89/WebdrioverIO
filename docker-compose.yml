@@ -1,11 +1,30 @@
-app:
-  build: .
-  command: npm test -- --host selenium
-  links:
-    - selenium
+version: '2'
+services:
+    app:
+        build: .
+        command: npm run local -- --host hub
+        links:
+            - hub
 
-selenium:
-  image: selenium/standalone-chrome
-  expose:
-    - "4444"
-  log_driver: "none"
+    hub:
+        image: selenium/hub
+        ports:
+            - 4444:4444
+
+    firefox:
+        image: selenium/node-firefox:3.14.0-arsenic
+        links:
+            - hub
+        ports:
+            - 5:5555
+        environment:
+          HUB_HOST: hub
+
+    chrome:
+        image: selenium/node-chrome:3.14.0-arsenic
+        links:
+            - hub
+        ports:
+            - 4:5555
+        environment:
+          HUB_HOST: hub

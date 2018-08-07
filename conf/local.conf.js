@@ -1,4 +1,6 @@
 exports.config = {
+    host: 'hub',
+    port: 4444,
 
     //
     // ==================
@@ -32,7 +34,7 @@ exports.config = {
     // and 30 processes will get spawned. The property handles how many capabilities
     // from the same test should run tests.
     //
-    maxInstances: 1,
+    maxInstances: 2,
     //
     // If you have trouble getting all important capabilities together, check out the
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
@@ -42,7 +44,7 @@ exports.config = {
         // maxInstances can get overwritten per capability. So if you have an in-house Selenium
         // grid with only 5 firefox instances available you can make sure that not more than
         // 5 instances get started at a time.
-        maxInstances: 1,
+        maxInstances: 2,
         //
         browserName: 'chrome'
     }],
@@ -127,18 +129,6 @@ exports.config = {
     // See the full list at http://mochajs.org/
     mochaOpts: {
         ui: 'bdd',
-        colors: true,
-        reporter: 'mocha-reportportal-agent',
-        reporterOptions: {
-            // client settings
-            token: "00000000-0000-0000-0000-000000000000",
-            endpoint: "http://localhost:8080/api/v1",
-            launch: "WebdriverIO",
-            project: "RP POC",
-            // agent settings
-            attachScreenshots: true,
-            showPassedHooks: false
-        },
         timeout: 99999999
     },
     //
